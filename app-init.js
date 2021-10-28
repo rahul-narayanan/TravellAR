@@ -5,7 +5,6 @@ export default class TravellAR extends Component {
      render() {
          return (
             < App />
-            
          );
      }
      
