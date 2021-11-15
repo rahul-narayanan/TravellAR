@@ -1,7 +1,10 @@
+"use strict";
+/*
+Page contains Scan button. Button click navigates to HomePage
+*/
 import React, { Component } from "react";
 import { View, Button, StyleSheet, ImageBackground } from "react-native";
 import { ViroARSceneNavigator } from "react-viro";
-import FirstScene from "./FirstScene";
 import HomePage from "./HomePage";
 
 export default class App extends Component {
@@ -35,7 +38,7 @@ export default class App extends Component {
   }
 }
 
-// Some styles given to button
+//styles given to button
 const styles = StyleSheet.create({
   container: {
     flex: 1,

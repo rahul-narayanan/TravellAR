@@ -1,8 +1,9 @@
 "use strict";
-import React, { Component } from "react";
-
+/*
+AR portal appears with location name. Portal displays 360 video from cloud storage.
+*/
+import React from "react";
 import { StyleSheet } from "react-native";
-
 import {
   ViroText,
   ViroARScene,
@@ -15,6 +16,7 @@ import {
   ViroImage,
 } from "react-viro";
 
+//Adding styles for Location name - text
 const styles = StyleSheet.create({
   textstyle: {
     fontFamily: "Arial",
@@ -46,7 +48,7 @@ export const FirstScene = createReactClass({
         <ViroPortalScene
           passable={true}
           dragType="FixedDistance"
-          onDrag={() => {}}
+          onDrag={() => { }}
         >
           <ViroPortal position={[0, 0, -1]} scale={[0.25, 0.25, 0.25]}>
             <Viro3DObject
@@ -59,8 +61,10 @@ export const FirstScene = createReactClass({
               type="VRX"
             />
           </ViroPortal>
-          <Viro360Video source={require("./res/Sea.mp4")} loop={true} />
+          <Viro360Video source={{ uri: "https://dolfj4z6ydqsd.cloudfront.net/Sea.mp4" }}
+            loop={true} />
         </ViroPortalScene>
+
         <ViroImage
           scale={[0.1, 0.1, 0.1]}
           height={0.35}
@@ -68,6 +72,7 @@ export const FirstScene = createReactClass({
           position={[-0.1, -0.17, -1]}
           source={require("./res/Hotspot_icon.png")}
         />
+
         <ViroText
           text="Riverfront"
           scale={[0.1, 0.1, 0.1]}
