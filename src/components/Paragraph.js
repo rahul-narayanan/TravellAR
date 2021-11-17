@@ -8,7 +8,7 @@ export default function Paragraph(props) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 15,
+    fontSize: 18,
     lineHeight: 21,
     textAlign: 'center',
     marginBottom: 12,

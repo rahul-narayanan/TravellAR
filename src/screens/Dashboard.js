@@ -9,9 +9,10 @@ export default function Dashboard({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Welcome to TravellAR</Header>
+      <Header>Let’s start</Header>
       <Paragraph>
-        Scan QR code to view to the world!
+        Your amazing app starts here. Open you favorite code editor and start
+        editing this project.
       </Paragraph>
       <Button
         mode="outlined"

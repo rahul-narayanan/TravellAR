@@ -42,7 +42,11 @@ export default function ResetPasswordScreen({ navigation }) {
         onPress={sendResetPasswordEmail}
         style={{ marginTop: 16 }}
       >
+<<<<<<< HEAD
         Send Instructions
+=======
+        Send Email
+>>>>>>> 09c2c231454fc68e6ae49b30f5ed2ff9ebb77a76
       </Button>
     </Background>
   )

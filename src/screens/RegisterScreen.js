@@ -11,18 +11,35 @@ import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
+<<<<<<< HEAD
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
+=======
+import { phoneValidator } from '../helpers/phoneValidator'
+
+export default function RegisterScreen({ navigation }) {
+  const [name, setName] = useState({ value: '', error: '' })
+  const [phone, setPhone] = useState({ value: '', error: '' })
+>>>>>>> 09c2c231454fc68e6ae49b30f5ed2ff9ebb77a76
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name.value)
+<<<<<<< HEAD
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
     if (emailError || passwordError || nameError) {
       setName({ ...name, error: nameError })
+=======
+    const phoneError = phoneValidator(phone.value)
+    const emailError = emailValidator(email.value)
+    const passwordError = passwordValidator(password.value)
+    if (emailError || passwordError || nameError || phoneError) {
+      setName({ ...name, error: nameError })
+      setPhone({ ...name, error: phoneError })
+>>>>>>> 09c2c231454fc68e6ae49b30f5ed2ff9ebb77a76
       setEmail({ ...email, error: emailError })
       setPassword({ ...password, error: passwordError })
       return
@@ -46,6 +63,21 @@ export default function RegisterScreen({ navigation }) {
         error={!!name.error}
         errorText={name.error}
       />
+<<<<<<< HEAD
+=======
+       <TextInput
+        label="Phone Number"
+        returnKeyType="next"
+        value={phone.value}
+        onChangeText={(text) => setPhone({ value: text, error: '' })}
+        error={!!phone.error}
+        errorText={phone.error}
+        autoCapitalize="none"
+        autoCompleteType="tel"
+        textContentType="telephoneNumber"
+        keyboardType="phone-pad"
+      />
+>>>>>>> 09c2c231454fc68e6ae49b30f5ed2ff9ebb77a76
       <TextInput
         label="Email"
         returnKeyType="next"
