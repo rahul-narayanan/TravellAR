@@ -11,7 +11,8 @@ import {
   ViroSpotLight,
   //ViroConstants
 } from "react-viro";
-import { FirstScene } from "./FirstScene";
+//import { FirstScene } from "./FirstScene";
+import ListSpot from "./ListSpot";
 
 export default class HomePage extends Component {
   constructor() {
@@ -54,7 +55,7 @@ export default class HomePage extends Component {
           />
           <ViroARImageMarker
             target={"targetOne"}
-            onAnchorFound={() => this.onImageFound(FirstScene)}
+            onAnchorFound={() => this.onImageFound(ListSpot)}
             pauseUpdates={this.state.pauseUpdates}
           />
         </ViroARScene>

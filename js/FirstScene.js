@@ -4,6 +4,7 @@ AR portal appears with location name. Portal displays 360 video from cloud stora
 */
 import React from "react";
 import { StyleSheet } from "react-native";
+import { HomePage } from "./HomePage";
 import {
   ViroText,
   ViroARScene,
@@ -60,6 +61,7 @@ export const FirstScene = createReactClass({
               ]}
               type="VRX"
             />
+            
           </ViroPortal>
           <Viro360Video source={{ uri: "https://dolfj4z6ydqsd.cloudfront.net/Sea.mp4" }}
             loop={true} />
@@ -67,11 +69,13 @@ export const FirstScene = createReactClass({
 
         <ViroImage
           scale={[0.1, 0.1, 0.1]}
-          height={0.35}
-          width={0.35}
-          position={[-0.1, -0.17, -1]}
-          source={require("./res/Hotspot_icon.png")}
-        />
+          height={0.80}
+          width={0.80}
+          position={[0, -0.25, -1]}
+          source={require("./res/Home.png")}
+          onClick = {() => {
+            this.props.sceneNavigator.pop()}
+        }        />
 
         <ViroText
           text="Riverfront"
@@ -82,6 +86,9 @@ export const FirstScene = createReactClass({
           materials={["frontMaterial", "backMaterial", "sideMaterial"]}
           extrusionDepth={8}
           style={styles.textstyle}
+          onClick = {() => {
+            this.props.sceneNavigator.pop()}
+        }
         />
       </ViroARScene>
     );
