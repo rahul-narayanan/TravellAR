@@ -32,7 +32,7 @@ export default class Login extends Component {
 
   userLogin = () => {
     if (this.state.email === "" && this.state.password === "") {
-      Alert.alert("Enter details to signin!");
+      Alert.alert("Enter details to Sign in!");
     } else {
       this.setState({
         isLoading: true,
