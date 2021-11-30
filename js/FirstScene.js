@@ -62,7 +62,11 @@ export const FirstScene = class extends Component {
             />
           </ViroPortal>
           <Viro360Video
-            source={{ uri: "https://dolfj4z6ydqsd.cloudfront.net/Sea.mp4" }}
+            source={
+              this.props.location.url
+                ? { uri: this.props.location.url }
+                : require("./res/Windsor.mp4")
+            }
             loop={true}
           />
         </ViroPortalScene>

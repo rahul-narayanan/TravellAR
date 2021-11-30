@@ -9,7 +9,6 @@ export const Locations = [
     id: "bridge",
     name: "Ambassador Bridge",
     imgSrc: require("./res/Bridge.jpg"),
-    url: "https://dolfj4z6ydqsd.cloudfront.net/Sea.mp4",
   },
   {
     id: "museum",

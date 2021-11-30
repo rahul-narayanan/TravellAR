@@ -38,24 +38,26 @@ export const Register = class extends Component {
       this.setState({
         isLoading: true,
       });
-      this.props.onSuccess();
-      //   firebase
-      //     .auth()
-      //     .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      //     .then((res) => {
-      //       res.user.updateProfile({
-      //         displayName: this.state.displayName,
-      //       });
-      //       console.log("User registered successfully!");
-      //       this.setState({
-      //         isLoading: false,
-      //         displayName: "",
-      //         email: "",
-      //         password: "",
-      //       });
-      //       this.props.navigation.navigate("Login");
-      //     })
-      //     .catch((error) => this.setState({ errorMessage: error.message }));
+      setTimeout(() => {
+        Alert.alert("Registered successfully");
+        this.props.onSuccess();
+      }, 1000);
+      // auth()
+      //   .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      //   .then((res) => {
+      //     res.user.updateProfile({
+      //       displayName: this.state.displayName,
+      //     });
+      //     console.log("User registered successfully!");
+      //     this.setState({
+      //       isLoading: false,
+      //       displayName: "",
+      //       email: "",
+      //       password: "",
+      //     });
+      //     this.props.navigation.navigate("Login");
+      //   })
+      //   .catch((error) => this.setState({ errorMessage: error.message }));
     }
   };
 
