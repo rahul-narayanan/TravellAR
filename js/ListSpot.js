@@ -35,20 +35,6 @@ ViroMaterials.createMaterials({
 });
 
 export default class ListSpot extends Component {
-  // getScene(id) {
-  //   switch (id) {
-  //     case "riverside":
-  //       return RiverScene;
-  //     case "bridge":
-  //       return BridgeScene;
-  //     case "museum":
-  //       return MuseumScene;
-  //     case "restaurant":
-  //     default:
-  //       return RestaurantScene;
-  //   }
-  // }
-
   handleLocationClick(location) {
     this.props.sceneNavigator.push({
       scene: FirstScene,
@@ -83,7 +69,6 @@ export default class ListSpot extends Component {
               height={0.3}
               width={0.6}
               onClick={() => this.handleLocationClick(location)}
-              //onTouch={() => this.handleLocationClick(location)}
             />
           ))}
         </ViroFlexView>
