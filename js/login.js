@@ -22,6 +22,13 @@ export default class Login extends Component {
       password: "",
       isLoading: false,
     };
+    this.emailInputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.emailInputRef.current.focus();
+    }, 100);
   }
 
   updateInputVal = (val, prop) => {
@@ -31,28 +38,29 @@ export default class Login extends Component {
   };
 
   userLogin = () => {
-    if (this.state.email === "" && this.state.password === "") {
-      Alert.alert("Enter details to Sign in!");
-    } else {
-      this.setState({
-        isLoading: true,
-      });
-      //   firebase
-      //     .auth()
-      //     .signInWithEmailAndPassword(this.state.email, this.state.password)
-      //     .then((res) => {
-      //       console.log(res);
-      //       console.log("User logged-in successfully!");
-      //       this.setState({
-      //         isLoading: false,
-      //         email: "",
-      //         password: "",
-      //       });
-      //       this.props.navigation.navigate("Dashboard");
-      //     })
-      //     .catch((error) => this.setState({ errorMessage: error.message }));
-      this.props.onSuccess();
-    }
+    this.props.onSuccess();
+    // if (this.state.email === "" && this.state.password === "") {
+    //   Alert.alert("Enter details to Sign in!");
+    // } else {
+    //   this.setState({
+    //     isLoading: true,
+    //   });
+    //   //   firebase
+    //   //     .auth()
+    //   //     .signInWithEmailAndPassword(this.state.email, this.state.password)
+    //   //     .then((res) => {
+    //   //       console.log(res);
+    //   //       console.log("User logged-in successfully!");
+    //   //       this.setState({
+    //   //         isLoading: false,
+    //   //         email: "",
+    //   //         password: "",
+    //   //       });
+    //   //       this.props.navigation.navigate("Dashboard");
+    //   //     })
+    //   //     .catch((error) => this.setState({ errorMessage: error.message }));
+    //   this.props.onSuccess();
+    // }
   };
 
   render() {
@@ -69,6 +77,7 @@ export default class Login extends Component {
           <Image source={Logo} width="10%" height="10%" flex={1} />
         </View>
         <TextInput
+          ref={this.emailInputRef}
           style={styles.inputStyle}
           placeholder="Email"
           placeholderTextColor="black"
@@ -86,8 +95,8 @@ export default class Login extends Component {
         />
         <TouchableOpacity
           style={{
-            borderWidth: 1,
-            borderColor: "#159AFF",
+            //borderWidth: 1,
+            //borderColor: "#159AFF",
             alignItems: "center",
             width: 100,
             height: 45,

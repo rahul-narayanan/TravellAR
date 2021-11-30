@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { FirstScene } from "./FirstScene";
 import {
   ViroFlexView,
@@ -11,6 +11,7 @@ import {
   ViroButton,
 } from "react-viro";
 import { StyleSheet, View } from "react-native";
+import { Locations } from "./locations";
 
 const styles = StyleSheet.create({
   textstyle: {
@@ -34,9 +35,30 @@ ViroMaterials.createMaterials({
 });
 
 export default class ListSpot extends Component {
+  // getScene(id) {
+  //   switch (id) {
+  //     case "riverside":
+  //       return RiverScene;
+  //     case "bridge":
+  //       return BridgeScene;
+  //     case "museum":
+  //       return MuseumScene;
+  //     case "restaurant":
+  //     default:
+  //       return RestaurantScene;
+  //   }
+  // }
+
+  handleLocationClick(location) {
+    this.props.sceneNavigator.push({
+      scene: FirstScene,
+      passProps: { location },
+    });
+  }
+
   render() {
     return (
-      <ViroARScene>
+      <ViroARScene key={`${Date.now()}`}>
         <ViroAmbientLight color="#aaaaaa" />
         <ViroSpotLight
           innerAngle={5}
@@ -47,48 +69,23 @@ export default class ListSpot extends Component {
           castsShadow
         />
         <ViroFlexView
-          style={{ flexDirection: "column", padding: 0.1 }}
+          style={{ flexDirection: "row", padding: 0.5 }}
           width={3.0}
           height={3.0}
-          position={[-5, 0, -1]}
-          rotation={[0, 45, 0]}
+          position={[-2, 1.5, -4]}
+          rotation={[0, 0, 0]}
         >
-          <ViroButton
-            source={require("./res/Riverside.jpg")}
-            style={{ flex: 0.5 }}
-            height={0.8}
-            width={0.8}
-            onClick={() => {
-              this.props.sceneNavigator.push({ scene: FirstScene });
-            }}
-          />
-          <ViroButton
-            source={require("./res/Bridge.jpg")}
-            style={{ flex: 0.5 }}
-            height={0.8}
-            width={0.8}
-            onClick={() => {
-              this.props.sceneNavigator.push({ scene: FirstScene });
-            }}
-          />
-          <ViroButton
-            source={require("./res/Museum.jpg")}
-            style={{ flex: 0.5 }}
-            height={0.8}
-            width={0.8}
-            onClick={() => {
-              this.props.sceneNavigator.push({ scene: FirstScene });
-            }}
-          />
-          <ViroButton
-            source={require("./res/Restaurant.jpg")}
-            style={{ flex: 0.5 }}
-            height={0.8}
-            width={0.8}
-            onClick={() => {
-              this.props.sceneNavigator.push({ scene: FirstScene });
-            }}
-          />
+          {Locations.map((location) => (
+            <ViroImage
+              key={`button_${location.id}`}
+              source={location.imgSrc}
+              style={{ flex: 0.8, padding: 1 }}
+              height={0.3}
+              width={0.6}
+              onClick={() => this.handleLocationClick(location)}
+              //onTouch={() => this.handleLocationClick(location)}
+            />
+          ))}
         </ViroFlexView>
       </ViroARScene>
     );

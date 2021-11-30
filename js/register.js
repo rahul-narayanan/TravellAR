@@ -97,8 +97,8 @@ export const Register = class extends Component {
         />
         <TouchableOpacity
           style={{
-            borderWidth: 1,
-            borderColor: "#159AFF",
+            // borderWidth: 1,
+            // borderColor: "#159AFF",
             alignItems: "center",
             width: 100,
             height: 45,
@@ -110,7 +110,7 @@ export const Register = class extends Component {
         >
           <Button
             color="#159AFF"
-            title="Signup"
+            title="Sign up"
             onPress={() => this.registerUser()}
           />
         </TouchableOpacity>
