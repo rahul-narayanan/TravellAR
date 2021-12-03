@@ -55,7 +55,7 @@ export default class ListSpot extends Component {
           castsShadow
         />
         <ViroFlexView
-          style={{ flexDirection: "row", padding: 0.5 }}
+          style={{ flexDirection: "row", padding: 0.3 }}
           width={3.0}
           height={3.0}
           position={[-2, 1.5, -4]}
