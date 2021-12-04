@@ -3,6 +3,11 @@ import App from "./js/App";
 import Login from "./js/login";
 import { Register } from "./js/register";
 
+/* 
+  Entry point of the app which navigates between login page and registration page
+  Once signed in or signed up, this component displays the home page 
+*/
+
 const TravellAR = () => {
   const [currentStep, setCurrentStep] = useState("login");
 

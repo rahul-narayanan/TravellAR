@@ -22,11 +22,24 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Home page functional component
+ * This component is responsible for the display of the home page
+ * It displays a animation page with the product name and a button to scan qr code
+ * Once the button is clicked, the camera will get opened to scan the qr code
+ * @returns home page
+ */
+
 const App = () => {
   const [showScan, setShowScan] = useState(false);
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
+  /**
+   * useEffect
+   * This function will be called after each render
+   * This animates the view with a duration of 1500ms ie. 1.5s
+   */
   useEffect(() => {
     setTimeout(() => {
       Animated.timing(fadeAnim, {
@@ -36,10 +49,18 @@ const App = () => {
     }, 1300);
   }, [fadeAnim]);
 
+  /**
+   * If button clicked, ViroARSceneNavigator will be rendered
+   * with the home page which opens the camera to scan the qr code
+   */
   if (showScan) {
     return <ViroARSceneNavigator initialScene={{ scene: HomePage }} />;
   }
 
+  /**
+   * Else, the home page will be displayed, with the animation
+   * and a button to scan the qr code
+   */
   return (
     <ImageBackground
       // source={{

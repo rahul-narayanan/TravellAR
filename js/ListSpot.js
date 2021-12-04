@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { FirstScene } from "./FirstScene";
+import { Portal } from "./Portal";
 import {
   ViroFlexView,
   ViroText,
@@ -37,7 +37,7 @@ ViroMaterials.createMaterials({
 export default class ListSpot extends Component {
   handleLocationClick(location) {
     this.props.sceneNavigator.push({
-      scene: FirstScene,
+      scene: Portal,
       passProps: { location },
     });
   }

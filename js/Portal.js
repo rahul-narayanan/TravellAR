@@ -40,7 +40,7 @@ ViroMaterials.createMaterials({
   },
 });
 
-export const FirstScene = class extends Component {
+export const Portal = class extends Component {
   render() {
     return (
       <ViroARScene>
