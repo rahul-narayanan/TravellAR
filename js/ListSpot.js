@@ -13,6 +13,10 @@ import {
 import { StyleSheet, View } from "react-native";
 import { Locations } from "./locations";
 
+/**
+ * CSS
+ * Contains styles for this page
+ */
 const styles = StyleSheet.create({
   textstyle: {
     fontFamily: "Arial",
@@ -34,7 +38,16 @@ ViroMaterials.createMaterials({
   },
 });
 
+/**
+ * Listspot functional component
+ * @requires sceneNavigator to push and pop the spots
+ * @returns page that displays the tourists spots as AR in real time
+ */
 export default class ListSpot extends Component {
+  /**
+   * Method called once the tourist spot is clicked
+   * @param {*} location - the location which the portal needs to display
+   */
   handleLocationClick(location) {
     this.props.sceneNavigator.push({
       scene: Portal,

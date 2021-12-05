@@ -1,3 +1,7 @@
+/**
+ * Locations Data store
+ * contains the data about the locations that this app supports
+ */
 export const Locations = [
   {
     id: "riverside",

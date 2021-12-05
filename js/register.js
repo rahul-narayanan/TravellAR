@@ -14,6 +14,17 @@ import {
 } from "react-native";
 import Logo from "./res/logo-small.png";
 
+/**
+ * Register functional component
+ * Responsible for signing up the user with the details provided
+ * supports validation and option to go back to signin page
+ * @requires name
+ * @requires email
+ * @requires password
+ * @returns register page
+ * @throws error if the entered details are not valid
+ */
+
 export const Register = class extends Component {
   constructor() {
     super();
@@ -31,6 +42,10 @@ export const Register = class extends Component {
     this.setState(state);
   };
 
+  /**
+   * Method that gets called once the user enters the details and click register
+   * Validates the details and registers the user in aws's cognito pool
+   */
   registerUser = () => {
     if (this.state.email === "" && this.state.password === "") {
       Alert.alert("Enter details to signup!");

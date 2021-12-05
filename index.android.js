@@ -1,6 +1,10 @@
 import { AppRegistry } from "react-native";
 import TravellAR from "./app-init";
 
+/**
+ * Entry point for android
+ */
+
 AppRegistry.registerComponent("TravellAR", () => TravellAR);
 
 // The below line is necessary for use with the TestBed App

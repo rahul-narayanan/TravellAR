@@ -3,7 +3,13 @@ import App from "./js/App";
 import Login from "./js/login";
 import { Register } from "./js/register";
 
-/* 
+/**
+ * Entry point of the app which navigates between login page and registration page
+ * Once signed in or signed up, this component displays the home page
+ * @returns react element that should be rendered
+ */
+
+/*
   Entry point of the app which navigates between login page and registration page
   Once signed in or signed up, this component displays the home page 
 */

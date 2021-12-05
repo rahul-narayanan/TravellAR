@@ -13,6 +13,13 @@ import {
 } from "react-viro";
 import ListSpot from "./ListSpot";
 
+/**
+ * Home page functional component
+ * Opens the camera in the mobile devices and waits for the qr code
+ * once qr code is captured, returns the locations to be displayed
+ * for that particular qr code
+ */
+
 export default class HomePage extends Component {
   constructor() {
     super();
@@ -29,6 +36,10 @@ export default class HomePage extends Component {
        } */
   }
 
+  /**
+   * Method called after the qr code is recognized
+   * @param {*} scene - Target scene to display for the scanned qr code
+   */
   onImageFound(scene) {
     this.setState(
       {
@@ -62,6 +73,9 @@ export default class HomePage extends Component {
   }
 }
 
+/**
+ * Creating targets for the qr codes that can be scanned
+ */
 ViroARTrackingTargets.createTargets({
   targetOne: {
     source: require("./res/emoji_smile_anim_a/QRCode.png"),

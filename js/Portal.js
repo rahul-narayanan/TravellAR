@@ -1,7 +1,5 @@
 "use strict";
-/*
-AR portal appears with location name. Portal displays 360 video from cloud storage.
-*/
+
 import React, { Component } from "react";
 import { StyleSheet } from "react-native";
 import { HomePage } from "./HomePage";
@@ -18,7 +16,9 @@ import {
   ViroButton,
 } from "react-viro";
 
-//Adding styles for Location name - text
+/**
+ * Styles for the Portal that displays the selected location
+ */
 const styles = StyleSheet.create({
   textstyle: {
     fontFamily: "Arial",
@@ -40,6 +40,13 @@ ViroMaterials.createMaterials({
   },
 });
 
+/**
+ * AR Portal functional component
+ * Portal that displays the selected location's 360 video from cloud storage.
+ * @requires location - details of the location to be displayed
+ * @returns AR portal with location details and a home button to go back to the previous page
+ *
+ */
 export const Portal = class extends Component {
   render() {
     return (
@@ -70,7 +77,6 @@ export const Portal = class extends Component {
             loop={true}
           />
         </ViroPortalScene>
-
         <ViroText
           text={this.props.location.name}
           scale={[0.1, 0.1, 0.1]}

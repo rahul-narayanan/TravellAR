@@ -1,5 +1,3 @@
-// components/login.js
-
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -14,6 +12,16 @@ import {
 } from "react-native";
 import Logo from "./res/logo-small.png";
 
+/**
+ * Login component
+ * Responsible for signin in the user with the details provided
+ * supports validation and option to signup
+ * @requires email
+ * @requires password
+ * @returns login page
+ * @throws error if the entered details are not valid
+ */
+
 export default class Login extends Component {
   constructor() {
     super();
@@ -25,6 +33,10 @@ export default class Login extends Component {
     this.emailInputRef = React.createRef();
   }
 
+  /**
+   * once the component is mounted, setting the focus to email address field
+   * to address the usability issue and making number of clicks made by the user less
+   */
   componentDidMount() {
     // setTimeout(() => {
     //   this.emailInputRef.current.focus();
@@ -37,6 +49,11 @@ export default class Login extends Component {
     this.setState(state);
   };
 
+  /**
+   * This method is called once the user enters the details and click signin button
+   * Validates the email and the password with the aws api's
+   * @returns homepage if successful else throws error to check the details
+   */
   userLogin = () => {
     if (this.state.email === "" || this.state.password === "") {
       Alert.alert("Enter details to Sign in!");
