@@ -1,9 +1,5 @@
 # TravellAR
 
-#Installation
-
-# TravellAR
-
 This repository contains the entire source code, built using ViroReact and React Native, for TravellAR AR App. TravellAR provides a AR experience to the user by providing a 360 degree and immersive experience of a tourist spot.
 
 <img src="screenshots/login.png" width="200"/> <img src="screenshots/register.png" width="200"/> <img src="screenshots/homepage.png" width="200"/> <img src="screenshots/listspots.png" width="200"/> <img src="screenshots/listspots1.png" width="200"/> <img src="screenshots/portal.png" width="200"/> <img src="screenshots/portal1.png" width="200"/> <img src="screenshots/portal2.png" width="200"/>
