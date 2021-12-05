@@ -38,7 +38,7 @@ export default class HomePage extends Component {
 
   /**
    * Method called after the qr code is recognized
-   * @param {*} scene - Target scene to display for the scanned qr code
+   * @param {SceneComponent} scene - Target scene to display for the scanned qr code
    */
   onImageFound(scene) {
     this.setState(

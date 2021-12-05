@@ -46,7 +46,7 @@ ViroMaterials.createMaterials({
 export default class ListSpot extends Component {
   /**
    * Method called once the tourist spot is clicked
-   * @param {*} location - the location which the portal needs to display
+   * @param {LocationJsonObject} location - the location which the portal needs to display
    */
   handleLocationClick(location) {
     this.props.sceneNavigator.push({
